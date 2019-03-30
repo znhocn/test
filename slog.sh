@@ -19,8 +19,8 @@ git commit -am "Updated: $(date +%F\ %H\:%M)"
 #git push
 if [ -z $(git push  2>&1 | grep fatal) ]; then
     echo "git push fatal"
-    rm -rf $(cd `dirname $0`; pwd)
-    git clone git@github.com:test/slog.git
+    #rm -rf $(cd `dirname $0`; pwd)
+    git clone git@github.com:znhocn/test.git
 else
     echo "git push ok"
 fi
