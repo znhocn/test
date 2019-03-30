@@ -16,7 +16,10 @@ echo "$(date +%F\ %H\:%M) is OK" >> $date_file
 
 git add .
 git commit -am "Updated: $(date +%F\ %H\:%M)"
-#git push
+git push
+
+echo $(git push  2>&1 | grep fatal)
+
 if [ -z $(git push  2>&1 | grep fatal) ]; then
     echo "git push fatal"
     #rm -rf $(cd `dirname $0`; pwd)
