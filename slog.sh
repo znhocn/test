@@ -22,10 +22,9 @@ echo $(git push  2>&1 | grep fatal)
 
 if [ -z $(git push  2>&1 | grep fatal) ]; then
     echo "git push ok"
-    echo "cd $(pwd)/.."
-    echo "rm -rf $(cd `dirname $0`; pwd)"
-    echo "$(pwd)"
-    echo "git clone git@github.com:znhocn/test.git"
+    cd $(pwd)/../
+    rm -rf $(cd `dirname $0`; pwd)
+    git clone git@github.com:znhocn/test.git
 else
     echo "git push fatal"
 fi
